@@ -42,6 +42,10 @@ body {
   cursor: pointer;
 
 }
+.log_in:hover{
+  background-color: 	#1e40af; /*something to do */
+    transition: background-color 0.3s ease;
+}
 .started{
    font-size: 14px;
   color: white;
@@ -52,6 +56,10 @@ body {
   text-align: center;
   font-weight: bold;
   cursor: pointer;
+}
+.started:hover{
+
+    transition: background-color 0.3s ease;
 }
 .welcome {
     text-align: center;
@@ -105,11 +113,12 @@ body {
 
 }
 .ctn_button:hover{
-   background-color: #5a45a0;
-    transition: background-color 0.3s ease;
+    opacity: 90%;
+    transition: opacity 0.3s ease;
+
 }
 .wlc_button:hover{
-  background-color: rgb(120, 133, 137) ; /*something to do */
+  background-color: rgba(255, 255, 255, 0.10);
     transition: background-color 0.3s ease;
     color: black;
 
@@ -274,8 +283,8 @@ body {
     font-weight: bold;
 }
 .get_started:hover {
-    background-color: #5a45a0;
-    transition: background-color 0.3s ease;
+    opacity: 80%;
+    transition: opacity 0.3s ease;
 }
 footer {
     background-color: #0f2040;
@@ -284,6 +293,17 @@ footer {
     padding: 20px;
     font-size: 13px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
