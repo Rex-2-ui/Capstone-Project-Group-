@@ -123,7 +123,7 @@ body {
   flex-wrap: wrap;
   flex-direction: row;
 }
-.steps{
+/* .steps{
     background: linear-gradient(to bottom, #0f2040, #162c52, #1a3a6e);
     color: white;
 
@@ -159,6 +159,68 @@ body {
     gap: 20px;
     padding: 40px 20px;
     text-align: center;
+} */
+.steps {
+    background: linear-gradient(to bottom, #0f2040, #162c52, #1a3a6e);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.steps h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.steps span {
+    font-size: 16px;
+    color: #bfdbfe;
+    display: block;
+    margin-bottom: 20px;
+}
+
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.step {
+    text-align: center;
+}
+
+.steps h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #f59e0b;
+}
+
+.steps h4 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.steps p {
+    font-size: 14px;
+    color: #bfdbfe;
+    margin-bottom: 20px;
+}
+.get_started {
+    background-color: #6E56CF;
+    color: white;
+    border: none;
+    padding: 15px 80px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.get_started:hover {
+    background-color: #5a45a0;
+    transition: background-color 0.3s ease;
 }
 
 
@@ -190,16 +252,11 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 640px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 1024px) {
   .container {
