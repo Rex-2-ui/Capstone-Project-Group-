@@ -5,12 +5,60 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
-<title>My Title</title>
+<title>Student Budgetting Tool</title>
 </head>
 
 <body>
-
+<nav class="top_nav">
+  <!-- LOGO -->
+</nav>
 <main>
+  <div>
+  <div>
+  <p id="date" ></p> <!--script for date -->
+  <p>Good Afternoon, Student! 👋</p>
+  <p>Set up your budget to start smart financial tracking</p>
+  <a href=""  ><button>Set Up Budget ➔ </button></a>
+  <button type="reset"> Reset </button> <!-- Symbol-->
+</div>
+<div class="field">
+  <h3>Set Your Allowance</h3><br>
+
+    <label for="Budget Amount">Budget Amount (₵)</label><br>
+    <input type="text" placeholder="eg. 500.00" required>
+
+
+  <div class="toggle">
+     <label>Period</label><br>
+    <button class="toggle_btn" onclick="setPeriod('weekly', this)">Weekly</button>
+    <button class="toggle_btn active" onclick="setPeriod('monthly', this)">Monthly</button>
+  </div>
+  <button type="submit"> Set Allowance </button>
+</div>
+<div>
+  <h3>Set Your Budget</h3>
+  <p>Enter your allowance below to start tracking your finances.</p>
+
+</div>
+<div>
+  <h3>Quick Add Expenses</h3>
+  <p>Log a new spending entry</p>
+
+  <!-- Something to be done -->
+</div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
 
 </main>
 
