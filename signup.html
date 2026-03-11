@@ -28,49 +28,89 @@
       <p class="left_footer">No email verification · No credit card · Free forever</p>
     </div>
 
-    <!-- RIGHT PANEL -->
-    <div class="right_panel">
-      <div class="logo_right">🎓 CHA-CHING</div>
+   <!-- RIGHT PANEL -->
+<div class="right_panel">
+  <div class="logo_right">🎓 CHA-CHING</div>
 
-      <div class="form_box">
-        <h2>Welcome back!</h2>
-        <p class="form_sub">Sign in to continue to your dashboard.</p>
+  <div class="form_box">
 
-        <!-- Toggle -->
-        <div class="toggle">
-          <button class="toggle_btn active">Sign In</button>
-          <button class="toggle_btn">Sign Up</button>
-        </div>
-
-        <!-- Form -->
-        <div class="field">
-          <label for="username">Username</label>
-          <div class="input_wrap">
-            <span>👤</span>
-            <input type="text" id="username" placeholder="e.g. john_doe">
-          </div>
-        </div>
-
-        <div class="field">
-          <label for="password">Password</label>
-          <div class="input_wrap">
-            <span>🔒</span>
-            <input type="password" id="password" placeholder="••••••••">
-            <span class="eye">👁</span>
-          </div>
-        </div>
-
-        <button class="signin_btn">Sign In</button>
-
-        <div class="divider"><span>or</span></div>
-
-        <button class="guest_btn">Continue as Guest 👋</button>
-
-        <p class="form_note">No email required. Your data is stored locally on your device.</p>
-      </div>
+    <!-- Sign In heading -->
+    <div id="heading_signin">
+      <h2>Welcome back!</h2>
+      <p class="form_sub">Sign in to continue to your dashboard.</p>
     </div>
 
-  </div>
+    <!-- Sign Up heading -->
+    <div id="heading_signup" style="display:none;">
+      <h2>Create account</h2>
+      <p class="form_sub">Set up your free account in seconds.</p>
+    </div>
 
+    <!-- Toggle -->
+    <div class="toggle">
+      <button class="toggle_btn active" onclick="showSignIn()">Sign In</button>
+      <button class="toggle_btn" onclick="showSignUp()">Sign Up</button>
+    </div>
+
+    <!-- SIGN IN FORM -->
+    <div id="form_signin">
+      <div class="field">
+        <label for="username">Username</label>
+        <div class="input_wrap">
+          <span>👤</span>
+          <input type="text" id="username" placeholder="e.g. john_doe">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <div class="input_wrap">
+          <span>🔒</span>
+          <input type="password" id="password" placeholder="••••••••">
+          <span class="eye">👁</span>
+        </div>
+      </div>
+
+      <button class="signin_btn">Sign In</button>
+    </div>
+
+    <!-- SIGN UP FORM -->
+    <div id="form_signup" style="display:none;">
+      <div class="field">
+        <label for="new_username">Username</label>
+        <div class="input_wrap">
+          <span>👤</span>
+          <input type="text" id="new_username" placeholder="e.g. john_doe">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="new_password">Password</label>
+        <div class="input_wrap">
+          <span>🔒</span>
+          <input type="password" id="new_password" placeholder="••••••••">
+          <span class="eye">👁</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="confirm_password">Confirm Password</label>
+        <div class="input_wrap">
+          <span>🔒</span>
+          <input type="password" id="confirm_password" placeholder="••••••••">
+          <span class="eye">👁</span>
+        </div>
+      </div>
+
+      <button class="signin_btn">👥 Create Account</button>
+    </div>
+
+    <!-- SHARED BOTTOM -->
+    <div class="divider"><span>or</span></div>
+    <button class="guest_btn">Continue as Guest 👋</button>
+    <p class="form_note">No email required. Your data is stored locally on your device.</p>
+
+  </div>
+</div>
 </body>
 </html>
