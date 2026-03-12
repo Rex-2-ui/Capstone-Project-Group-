@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <link rel="stylesheet" href="welcomepage.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,21 +41,25 @@
 
      <div class="container">
       <div class="expense_tracking">
+        <i data-lucide="receipt-cent"></i>
             <h2>Expense Tracking</h2>
             <p>Log every purchase by category — food, transport, entertainment, and more.</p>
       </div>
 
         <div class="visual_analytics">
+          <i data-lucide="chart-no-axes-column"></i>
               <h2>Visual Analytics</h2>
              <p>See where your money goes with clear pie charts and spending breakdowns.</p>
        </div>
 
         <div class="budget_feedback">
+          <i data-lucide="trending-up"></i>
       <h2>Budget Feedback</h2>
       <p>Get real-time alerts and tips to keep your spending in check every week.</p>
         </div>
 
         <div class="smart_tips">
+          <i data-lucide="lightbulb"></i>
       <h2>Smart Tips</h2>
       <p>Practical money-saving advice tailored to students and young adults.</p>
         </div>
@@ -71,18 +73,21 @@
 
   <div class="steps-grid">
     <div class="step">
+      <div class="step-icon">✍️</div>
       <h3>STEP 1</h3>
       <h4>Create an Account</h4>
       <p>Sign up instantly — no email verification needed.</p>
     </div>
 
     <div class="step">
+      <div class="step-icon">💰</div>
       <h3>STEP 2</h3>
       <h4>Set Your Allowance</h4>
       <p>Enter your weekly or monthly budget to get started.</p>
     </div>
 
     <div class="step">
+      <div class="step-icon">📊</div>
       <h3>STEP 3</h3>
       <h4>Track & Visualize</h4>
       <p>Log expenses and watch your spending charts update live.</p>
@@ -92,6 +97,11 @@
   <a href="login.html"><button class="get_started">Get Started Now 🚀</button></a>
 </div>
   </div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
 
 </body>
 <br>
