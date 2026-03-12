@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login – CHA-CHING</title>
   <link rel="stylesheet" href="login.css">
+  <link rel="shortcut icon" href="imgs/logo.ico">
+  <title>Login – CHA-CHING</title>
 </head>
 <body>
 
@@ -48,8 +49,8 @@
 
     <!-- Toggle -->
     <div class="toggle">
-      <button class="toggle_btn active" onclick="showSignIn()">Sign In</button>
-      <button class="toggle_btn" onclick="showSignUp()">Sign Up</button>
+      <button class="toggle_btn active" id="tab_signin" onclick="showSignIn()">Sign In</button>
+      <button class="toggle_btn" id="tab_signup" onclick="showSignUp()">Sign Up</button>
     </div>
 
     <!-- SIGN IN FORM -->
@@ -57,7 +58,7 @@
       <div class="field">
         <label for="username">Username</label>
         <div class="input_wrap">
-          <span>👤</span>
+          <span class="icon"><i data-lucide="user"></i></span>
           <input type="text" id="username" placeholder="e.g. john_doe">
         </div>
       </div>
@@ -65,13 +66,13 @@
       <div class="field">
         <label for="password">Password</label>
         <div class="input_wrap">
-          <span>🔒</span>
+          <span class="icon"><i data-lucide="lock"></i></span>
           <input type="password" id="password" placeholder="••••••••">
-          <span class="eye">👁</span>
+          <span class="icon" onclick="togglePassword('password', 'eye_si')"><i data-lucide="eye" id="eye_si"></i></span>
         </div>
       </div>
 
-      <button class="signin_btn">Sign In</button>
+      <button class="signin_btn" id="btn_signin">Sign In</button>
     </div>
 
     <!-- SIGN UP FORM -->
@@ -79,7 +80,7 @@
       <div class="field">
         <label for="new_username">Username</label>
         <div class="input_wrap">
-          <span>👤</span>
+          <span class="icon"><i data-lucide="user"></i></span>
           <input type="text" id="new_username" placeholder="e.g. john_doe">
         </div>
       </div>
@@ -87,22 +88,23 @@
       <div class="field">
         <label for="new_password">Password</label>
         <div class="input_wrap">
-          <span>🔒</span>
+          <span class="icon"><i data-lucide="lock"></i></span>
           <input type="password" id="new_password" placeholder="••••••••">
-          <span class="eye">👁</span>
+           <span class="icon" onclick="togglePassword('new_password', 'eye_su1')"><i data-lucide="eye" id="eye_su1"></i></span>
         </div>
       </div>
 
       <div class="field">
         <label for="confirm_password">Confirm Password</label>
         <div class="input_wrap">
-          <span>🔒</span>
+           <span class="icon"><i data-lucide="lock"></i></span>
           <input type="password" id="confirm_password" placeholder="••••••••">
-          <span class="eye">👁</span>
+          <span class="icon" onclick="togglePassword('confirm_password', 'eye_su2')"><i data-lucide="eye" id="eye_su2"></i></span>
         </div>
       </div>
+      </div>
 
-      <button class="signin_btn">👥 Create Account</button>
+      <button class="signin_btn" id="btn_signup">👥 Create Account</button>
     </div>
 
     <!-- SHARED BOTTOM -->
@@ -112,5 +114,96 @@
 
   </div>
 </div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+
+  function showSignIn() {
+      // Forms
+      document.getElementById('form_signin').style.display = 'block';
+      document.getElementById('form_signup').style.display = 'none';
+      // Headings
+      document.getElementById('heading_signin').style.display = 'block';
+      document.getElementById('heading_signup').style.display = 'none';
+      // Tabs
+      document.getElementById('tab_signin').classList.add('active');
+      document.getElementById('tab_signup').classList.remove('active');
+    }
+
+    function showSignUp() {
+      // Forms
+      document.getElementById('form_signin').style.display = 'none';
+      document.getElementById('form_signup').style.display = 'block';
+      // Headings
+      document.getElementById('heading_signin').style.display = 'none';
+      document.getElementById('heading_signup').style.display = 'block';
+      // Tabs
+      document.getElementById('tab_signup').classList.add('active');
+      document.getElementById('tab_signin').classList.remove('active');
+    }
+
+    function togglePassword(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon  = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.setAttribute('data-lucide', 'eye-off');
+      } else {
+        input.type = 'password';
+        icon.setAttribute('data-lucide', 'eye');
+      }
+      lucide.createIcons(); // re-render the swapped icon
+    }
+
+    // Check URL param so welcomepage can link directly to sign-up tab
+    // e.g. login.html?tab=signup
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('tab') === 'signup') showSignUp();
+
+    // SIGN UP — save new account to localStorage
+document.getElementById('btn_signup').addEventListener('click', function() {
+  const username = document.getElementById('new_username').value.trim();
+  const password = document.getElementById('new_password').value;
+  const confirm  = document.getElementById('confirm_password').value;
+
+  if (!username || !password) return alert('Please fill in all fields.');
+  if (password !== confirm)   return alert('Passwords do not match.');
+
+  // Check if username already exists
+  const existing = JSON.parse(localStorage.getItem('users') || '{}');
+  if (existing[username])     return alert('Username already taken.');
+
+  // Save user
+  existing[username] = { password };
+  localStorage.setItem('users', JSON.stringify(existing));
+  alert('Account created! You can now sign in.');
+  showSignIn();
+});
+
+// SIGN IN — check credentials against localStorage
+document.getElementById('btn_signin').addEventListener('click', function() {
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+
+  const users = JSON.parse(localStorage.getItem('users') || '{}');
+
+  if (!users[username] || users[username].password !== password) {
+    return alert('Invalid username or password.');
+  }
+
+  // Saving who is currently logged in
+  localStorage.setItem('currentUser', username);
+  window.location.href = 'dashboard.html';
+});
+// GUEST — skip login entirely
+//Here no information will be stored
+document.querySelector('.guest_btn').addEventListener('click', function() {
+  localStorage.setItem('currentUser', 'guest');
+  window.location.href = 'dashboard.html';
+});
+
+</script>
+
 </body>
 </html>
