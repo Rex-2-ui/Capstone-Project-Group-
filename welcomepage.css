@@ -164,39 +164,39 @@ body {
      flex: 1 1 200px;
 }
 .expense_tracking_image{
-    color: #6E56CF;
-    width: 36px;
+    color: #2563eb;
+    background-color: #dbeafe;
+    width: 30px;
     height: 30px;
-    background-color: black;
-    margin:auto;
-    padding:0%
+
 }
 
 .visual_analytics_image {
-    color: #f59e0b;
-    width: 36px;
-    height: 30px;
-    background-color: black;
-    margin:auto;
-    padding:0%
+    color: #d97706;
+    background-color: #fef3c7;
+    width: 35px;
+    height: 35px;
+
+
 }
 
 .budget_feedback_image {
-    color: #10b981;
-    width: 36px;
-    height: 30px;
-    background-color: black;
-    margin:auto;
-    padding:0%
+    color: #0891b2;
+    background-color: #cffafe;
+    width: 35px;
+    height: 35px;
+
+
+
 }
 
 .smart_tips_image {
-    color: #3b82f6;
-    width: 36px;
+    color: #7c3aed;
+    background-color: #ede9fe;
+    width: 30px;
     height: 30px;
-    background-color: black;
-    margin:auto;
-    padding:0%
+
+
 }
 .container p {
     color: #6b7280;

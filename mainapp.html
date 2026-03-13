@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mainapp.css">
 <title>Student Budgetting Tool</title>
 </head>
 
@@ -40,11 +40,47 @@
   <p>Enter your allowance below to start tracking your finances.</p>
 
 </div>
-<div>
-  <h3>Quick Add Expenses</h3>
-  <p>Log a new spending entry</p>
+<div class="quick_add">
+  <div class="quick_add_header" onclick="toggleExpense()">
+    <div class="quick_add_left">
+      <div class="quick_add_icon">+</div>
+      <div>
+        <h3>Quick Add Expense</h3>
+        <p>Log a new spending entry</p>
+      </div>
+    </div>
+    <button class="chevron" id="chevron">&#8964;</button>
+  </div>
 
-  <!-- Something to be done -->
+  <div class="quick_add_form" id="quick_add_form" style="display:none;">
+    <div class="form_row">
+      <div class="field">
+        <label>Category</label>
+        <select class="input_wrap">
+          <option>🍔 Food</option>
+          <option>🚌 Transport</option>
+          <option>🎮 Entertainment</option>
+          <option>📚 Education</option>
+          <option>🏠 Housing</option>
+          <option>💊 Health</option>
+          <option>👗 Clothing</option>
+          <option>📦 Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Amount (₵)</label>
+        <input class="input_wrap" type="number" placeholder="0.00" min="0" step="0.01">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Description (optional)</label>
+      <input class="input_wrap" type="text" placeholder="e.g. Lunch at cafeteria">
+    </div>
+
+    <button class="add_expense_btn">+ Add Expense</button>
+  </div>
 </div>
 <div class="recent_expenses">
   <div class="recent_header">
@@ -74,7 +110,7 @@
 
 </main>
 
-<script src="script.js"></script>
+
 </body>
 
 </html>
