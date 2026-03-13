@@ -163,6 +163,41 @@ body {
      transition: transform 0.2s;
      flex: 1 1 200px;
 }
+.expense_tracking_image{
+    color: #6E56CF;
+    width: 36px;
+    height: 30px;
+    background-color: black;
+    margin:auto;
+    padding:0%
+}
+
+.visual_analytics_image {
+    color: #f59e0b;
+    width: 36px;
+    height: 30px;
+    background-color: black;
+    margin:auto;
+    padding:0%
+}
+
+.budget_feedback_image {
+    color: #10b981;
+    width: 36px;
+    height: 30px;
+    background-color: black;
+    margin:auto;
+    padding:0%
+}
+
+.smart_tips_image {
+    color: #3b82f6;
+    width: 36px;
+    height: 30px;
+    background-color: black;
+    margin:auto;
+    padding:0%
+}
 .container p {
     color: #6b7280;
     font-size: 13px;
@@ -175,6 +210,7 @@ body {
   transition: transform 0.5s;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
+
 
 
 .container {
