@@ -1,195 +1,476 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="mainapp.css">
-  <title>Student Budgeting Tool</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="mainapp.css" />
+    <title>CHA-CHING</title>
+  </head>
 
-<body>
-  <nav class="top_nav">
-    <!-- LOGO -->
-  </nav>
-  <div class="layout">
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar_logo">🎓 CHA-CHING</div>
 
-  <aside class="sidebar">
-    <!-- Logo -->
-    <div class="sidebar_logo">🎓 CHA-CHING</div>
-
-    <!-- User -->
-    <div class="sidebar_user">
-      <div class="user_avatar">G</div>
-      <div>
-        <p class="user_name">Guest</p>
-        <p class="user_status">Active session</p>
-      </div>
-    </div>
-
-    <!-- Menu -->
-    <p class="menu_label">MENU</p>
-    <nav class="sidebar_nav">
-      <a href="#" class="nav_item active">
-        <i data-lucide="layout-dashboard"></i>
-        <div>
-          <p>Dashboard</p>
-          <span>Overview</span>
-        </div>
-        <div class="nav_indicator"></div>
-      </a>
-      <a href="#" class="nav_item">
-        <i data-lucide="receipt"></i>
-        <div>
-          <p>Expenses</p>
-          <span>Track spending</span>
-        </div>
-      </a>
-      <a href="#" class="nav_item">
-        <i data-lucide="bar-chart-2"></i>
-        <div>
-          <p>Analytics</p>
-          <span>Visual breakdown</span>
-        </div>
-      </a>
-      <a href="#" class="nav_item">
-        <i data-lucide="lightbulb"></i>
-        <div>
-          <p>Tips</p>
-          <span>Budget advice</span>
-        </div>
-      </a>
-    </nav>
-
-    <!-- Budget Health -->
-    <div class="budget_health">
-      <p class="budget_health_title">BUDGET HEALTH <span>— Not Set</span></p>
-      <p class="budget_health_sub">Set your allowance to track health</p>
-    </div>
-
-    <!-- Log Out -->
-    <a href="#" class="logout">
-      <i data-lucide="log-out"></i>
-      <p>Log Out</p>
-    </a>
-
-    <p class="sidebar_footer">Built for students 🎓</p>
-  </aside>
-
-  <!-- MAIN CONTENT -->
-
-
-
-
-  <main>
-
-    <!-- HERO BANNER -->
-    <div class="hero">
-      <div class="hero_text">
-        <p id="date"></p>
-        <p class="hero_title">Good Afternoon, Student! 👋</p>
-        <p class="hero_sub">Set up your budget to start smart financial tracking</p>
-        <div class="hero_buttons">
-          <a href=""><button class="hero_cta">Set Up Budget ➔</button></a>
-          <button class="hero_reset">↺ Reset</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Set Allowance -->
-    <div class="card">
-      <h3 class="card_title">🏦 Set Your Allowance</h3>
-
-      <div class="field">
-        <label>Budget Amount (₵)</label>
-        <input type="number" placeholder="e.g. 500.00" required>
-      </div>
-
-      <div class="field">
-        <label>Period</label>
-        <div class="toggle_row">
-          <button class="toggle_btn" onclick="setPeriod('weekly', this)">Weekly</button>
-          <button class="toggle_btn active" onclick="setPeriod('monthly', this)">Monthly</button>
-        </div>
-      </div>
-
-      <button class="submit_btn">Set Allowance</button>
-    </div>
-
-    <!-- Set Your Budget -->
-    <div class="card card_hint">
-      <div class="hint_icon">⏱</div>
-      <div>
-        <h3>Set Your Budget</h3>
-        <p>Enter your allowance below to start tracking your finances.</p>
-      </div>
-    </div>
-
-    <!-- Quick Add Expense -->
-    <div class="quick_add">
-      <div class="quick_add_header" onclick="toggleExpense()">
-        <div class="quick_add_left">
-          <div class="quick_add_icon">+</div>
+        <div class="sidebar_user">
+          <div class="user_avatar">G</div>
           <div>
-            <h3>Quick Add Expense</h3>
-            <p>Log a new spending entry</p>
+            <p class="user_name">Guest</p>
+            <p class="user_status">Active session</p>
           </div>
         </div>
-        <button class="chevron" id="chevron">&#8964;</button>
-      </div>
 
-      <div class="quick_add_form" id="quick_add_form" style="display:none;">
-        <div class="form_row">
-          <div class="field">
-            <label>Category</label>
-            <select class="input_wrap">
-              <option>🍔 Food</option>
-              <option>🚌 Transport</option>
-              <option>🎮 Entertainment</option>
-              <option>📚 Education</option>
-              <option>🏠 Housing</option>
-              <option>💊 Health</option>
-              <option>👗 Clothing</option>
-              <option>📦 Other</option>
-            </select>
+        <p class="menu_label">MENU</p>
+
+        <nav class="sidebar_nav">
+          <a href="#" class="nav_item active" data-page="dashboard">
+            <i data-lucide="layout-dashboard"></i>
+            <div>
+              <p>Dashboard</p>
+              <span>Overview</span>
+            </div>
+            <div class="nav_indicator"></div>
+          </a>
+          <a href="#" class="nav_item" data-page="expenses">
+            <i data-lucide="receipt"></i>
+            <div>
+              <p>Expenses</p>
+              <span>Track spending</span>
+            </div>
+          </a>
+          <a href="#" class="nav_item" data-page="analytics">
+            <i data-lucide="bar-chart-2"></i>
+            <div>
+              <p>Analytics</p>
+              <span>Visual breakdown</span>
+            </div>
+          </a>
+          <a href="#" class="nav_item" data-page="tips">
+            <i data-lucide="lightbulb"></i>
+            <div>
+              <p>Tips</p>
+              <span>Budget advice</span>
+            </div>
+          </a>
+        </nav>
+
+        <div class="budget_health">
+          <p class="budget_health_title">
+            BUDGET HEALTH <span>— Not Set</span>
+          </p>
+          <p class="budget_health_sub">Set your allowance to track health</p>
+        </div>
+
+        <a href="login.html" class="logout">
+          <i data-lucide="log-out"></i>
+          <p>Log Out</p>
+        </a>
+
+        <p class="sidebar_footer">Built for students 🎓</p>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main>
+        <!-- DASHBOARD PAGE -->
+        <div id="page_dashboard" class="page">
+          <div class="hero">
+            <div class="hero_text">
+              <p id="date"></p>
+              <p class="hero_title">Good Afternoon, Student! 👋</p>
+              <p class="hero_sub">
+                Set up your budget to start smart financial tracking
+              </p>
+              <div class="hero_buttons">
+                <button class="hero_cta">Set Up Budget ➔</button>
+                <button class="hero_reset">↺ Reset</button>
+              </div>
+            </div>
           </div>
-          <div class="field">
-            <label>Amount (₵)</label>
-            <input class="input_wrap" type="number" placeholder="0.00" min="0" step="0.01">
+
+          <div class="card">
+            <h3 class="card_title">🏦 Set Your Allowance</h3>
+            <div class="field">
+              <label>Budget Amount (₵)</label>
+              <input type="number" placeholder="e.g. 500.00" required />
+            </div>
+            <div class="field">
+              <label>Period</label>
+              <div class="toggle_row">
+                <button class="toggle_btn" onclick="setPeriod('weekly', this)">
+                  Weekly
+                </button>
+                <button
+                  class="toggle_btn active"
+                  onclick="setPeriod('monthly', this)"
+                >
+                  Monthly
+                </button>
+              </div>
+            </div>
+            <button class="submit_btn">Set Allowance</button>
+          </div>
+
+          <div class="card card_hint">
+            <div class="hint_icon">⏱</div>
+            <div>
+              <h3>Set Your Budget</h3>
+              <p>Enter your allowance below to start tracking your finances.</p>
+            </div>
+          </div>
+
+          <div class="quick_add">
+            <div class="quick_add_header" onclick="toggleExpense()">
+              <div class="quick_add_left">
+                <div class="quick_add_icon">+</div>
+                <div>
+                  <h3>Quick Add Expense</h3>
+                  <p>Log a new spending entry</p>
+                </div>
+              </div>
+              <button class="chevron" id="chevron">&#8964;</button>
+            </div>
+            <div
+              class="quick_add_form"
+              id="quick_add_form"
+              style="display: none"
+            >
+              <div class="form_row">
+                <div class="field">
+                  <label>Category</label>
+                  <select class="input_wrap">
+                    <option>🍔 Food</option>
+                    <option>🚌 Transport</option>
+                    <option>🎮 Entertainment</option>
+                    <option>📚 Education</option>
+                    <option>🏠 Housing</option>
+                    <option>💊 Health</option>
+                    <option>👗 Clothing</option>
+                    <option>📦 Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Amount (₵)</label>
+                  <input
+                    class="input_wrap"
+                    type="number"
+                    placeholder="0.00"
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label>Description (optional)</label>
+                <input
+                  class="input_wrap"
+                  type="text"
+                  placeholder="e.g. Lunch at cafeteria"
+                />
+              </div>
+              <button class="add_expense_btn">+ Add Expense</button>
+            </div>
+          </div>
+
+          <div class="recent_expenses">
+            <div class="recent_header">
+              <h3>Recent Expenses</h3>
+              <a href="#">View All →</a>
+            </div>
+            <div class="no_expenses">
+              <div class="no_expenses_icon">🧾</div>
+              <p class="no_expenses_title">No expenses yet</p>
+              <p class="no_expenses_sub">Add your first expense above</p>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <label>Description (optional)</label>
-          <input class="input_wrap" type="text" placeholder="e.g. Lunch at cafeteria">
+
+        <!-- EXPENSES PAGE -->
+        <div id="page_expenses" class="page" style="display: none">
+          <div class="page_header">
+            <div>
+              <h1 class="page_title">Expenses</h1>
+              <p class="page_sub">0 total · ₵0.00 spent</p>
+            </div>
+            <button class="add_btn">+ Add Expense</button>
+          </div>
+
+          <div class="card">
+            <div class="search_wrap">
+              <i data-lucide="search"></i>
+              <input type="text" placeholder="Search expenses..." />
+            </div>
+            <div class="filter_row">
+              <button class="filter_btn active">All (0)</button>
+              <button class="filter_btn">Food</button>
+              <button class="filter_btn">Transport</button>
+              <button class="filter_btn">Entertainment</button>
+            </div>
+            <div class="sort_row">
+              <i data-lucide="filter"></i>
+              <span>Sort by:</span>
+              <button class="sort_btn active">Date</button>
+              <button class="sort_btn">Amount</button>
+            </div>
+          </div>
+
+          <div class="card no_expenses">
+            <div class="no_expenses_icon">🧾</div>
+            <p class="no_expenses_title">No expenses yet</p>
+            <p class="no_expenses_sub">Add your first expense to get started</p>
+          </div>
         </div>
-        <button class="add_expense_btn">+ Add Expense</button>
-      </div>
+
+        <!-- ANALYTICS PAGE -->
+        <div id="page_analytics" class="page" style="display: none">
+          <div class="page_header">
+            <div>
+              <h1 class="page_title">Analytics</h1>
+              <p class="page_sub">Visual breakdown of your spending patterns</p>
+            </div>
+          </div>
+
+          <div class="card no_expenses">
+            <div class="no_expenses_icon">
+              <i data-lucide="bar-chart-2"></i>
+            </div>
+            <p class="no_expenses_title">No data to display</p>
+            <p class="no_expenses_sub">
+              Add expenses to see your spending analytics
+            </p>
+          </div>
+        </div>
+
+        <!-- TIPS PAGE -->
+
+        <div id="page_tips" class="page" style="display: none">
+          <div class="page_header">
+            <div>
+              <h1 class="page_title">Budgeting Tips</h1>
+              <p class="page_sub">
+                Smart financial habits for students and young adults
+              </p>
+            </div>
+          </div>
+
+          <!-- Hero Banner -->
+          <div class="tips_hero">
+            <div class="tips_hero_icon">
+              <i data-lucide="lightbulb"></i>
+            </div>
+            <h2>Financial Wisdom for Students</h2>
+            <p>
+              Building good money habits in university sets the foundation for
+              lifelong financial health. Small daily decisions compound into big
+              financial outcomes over time.
+            </p>
+          </div>
+
+          <!-- Quick Tips Row -->
+          <div class="quick_tips_row">
+            <div class="quick_tip_card">
+              <i data-lucide="target"></i>
+              <p>Set a savings goal every month, even if it's small.</p>
+            </div>
+            <div class="quick_tip_card">
+              <i data-lucide="star"></i>
+              <p>
+                Reward yourself occasionally — budgeting should be sustainable,
+                not punishing.
+              </p>
+            </div>
+            <div class="quick_tip_card">
+              <i data-lucide="life-buoy"></i>
+              <p>
+                Talk to your campus student support if you're struggling
+                financially — help is available.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tips Grid -->
+          <div class="tips_grid">
+            <div class="tip_card" style="background-color: #f5f3ff">
+              <div class="tip_card_header">
+                <div class="tip_icon" style="background-color: #ede9fe">
+                  <i data-lucide="piggy-bank"></i>
+                </div>
+                <div>
+                  <p class="tips_label">🔥 TIPS</p>
+                  <h3>General Budgeting</h3>
+                </div>
+              </div>
+              <ol class="tip_list">
+                <li>
+                  Use the 50/30/20 rule: 50% for needs, 30% for wants, 20% for
+                  savings.
+                </li>
+                <li>
+                  Track every expense, no matter how small — they add up
+                  quickly!
+                </li>
+                <li>
+                  Review your spending at the end of each week to spot patterns.
+                </li>
+                <li>Set a daily spending limit and stick to it.</li>
+                <li>
+                  Build an emergency fund of at least one month's expenses.
+                </li>
+              </ol>
+            </div>
+
+            <div class="tip_card" style="background-color: #fff7ed">
+              <div class="tip_card_header">
+                <div class="tip_icon" style="background-color: #ffedd5">
+                  <i data-lucide="shopping-cart"></i>
+                </div>
+                <div>
+                  <p class="tips_label">🛒 TIPS</p>
+                  <h3>Food & Groceries</h3>
+                </div>
+              </div>
+              <ol class="tip_list">
+                <li>Meal prep on weekends to avoid expensive daily takeout.</li>
+                <li>Cook at home — it's 3–5× cheaper than eating out.</li>
+                <li>Bring lunch to campus instead of buying every day.</li>
+                <li>
+                  Use student dining plans or campus cafeterias for discounts.
+                </li>
+                <li>Buy in bulk for non-perishable items to save long-term.</li>
+              </ol>
+            </div>
+
+            <div class="tip_card" style="background-color: #f0fdf4">
+              <div class="tip_card_header">
+                <div class="tip_icon" style="background-color: #dcfce7">
+                  <i data-lucide="bus"></i>
+                </div>
+                <div>
+                  <p class="tips_label">🚌 TIPS</p>
+                  <h3>Transportation</h3>
+                </div>
+              </div>
+              <ol class="tip_list">
+                <li>
+                  Walk or cycle for short distances — saves money and keeps you
+                  fit.
+                </li>
+                <li>Use public transport whenever possible.</li>
+                <li>Carpool with classmates living nearby.</li>
+                <li>Look for student discounts on bus or train passes.</li>
+                <li>
+                  Plan routes in advance to avoid expensive last-minute taxis.
+                </li>
+              </ol>
+            </div>
+
+            <div class="tip_card" style="background-color: #fefce8">
+              <div class="tip_card_header">
+                <div class="tip_icon" style="background-color: #fef9c3">
+                  <i data-lucide="wifi"></i>
+                </div>
+                <div>
+                  <p class="tips_label">📱 TIPS</p>
+                  <h3>Internet & Digital</h3>
+                </div>
+              </div>
+              <ol class="tip_list">
+                <li>
+                  Take advantage of free campus Wi-Fi to reduce data usage.
+                </li>
+                <li>
+                  Share streaming subscriptions with housemates to split costs.
+                </li>
+                <li>
+                  Look for student discounts on apps, software, and
+                  subscriptions.
+                </li>
+                <li>
+                  Use free tools like Google Docs instead of paid alternatives.
+                </li>
+                <li>Monitor background app data consumption on your phone.</li>
+              </ol>
+            </div>
+
+            <div class="tip_card" style="background-color: #f5f3ff">
+              <div class="tip_card_header">
+                <div class="tip_icon" style="background-color: #ede9fe">
+                  <i data-lucide="gamepad-2"></i>
+                </div>
+                <div>
+                  <p class="tips_label">🎮 TIPS</p>
+                  <h3>Entertainment</h3>
+                </div>
+              </div>
+              <ol class="tip_list">
+                <li>Explore free campus events, clubs, and activities.</li>
+                <li>
+                  Use your student ID for cinema, museum, and concert discounts.
+                </li>
+                <li>Set a monthly entertainment cap and stick to it.</li>
+                <li>
+                  Borrow games, movies, or books from the library for free.
+                </li>
+                <li>
+                  Socialise affordably — potluck dinners, outdoor activities,
+                  etc.
+                </li>
+              </ol>
+            </div>
+
+            <div class="tip_card" style="background-color: #fdf2f8">
+              <div class="tip_card_header">
+                <div class="tip_icon" style="background-color: #fce7f3">
+                  <i data-lucide="book-open"></i>
+                </div>
+                <div>
+                  <p class="tips_label">📚 TIPS</p>
+                  <h3>Books & Supplies</h3>
+                </div>
+              </div>
+              <ol class="tip_list">
+                <li>
+                  Buy second-hand or rental textbooks instead of new ones.
+                </li>
+                <li>
+                  Check your campus library — many textbooks are available for
+                  free.
+                </li>
+                <li>
+                  Share textbooks with classmates for subjects you overlap.
+                </li>
+                <li>
+                  Use free online resources like OpenStax and Khan Academy.
+                </li>
+                <li>
+                  Sell your old textbooks and notes at the end of each semester.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <!-- Footer note -->
+          <div class="tips_footer">
+            <p>
+              Remember: Every dollar saved today is an investment in your future
+              🎓
+            </p>
+            <p>
+              If you're experiencing financial hardship, reach out to your
+              campus student support services.
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
 
-    <!-- Recent Expenses -->
-    <div class="recent_expenses">
-      <div class="recent_header">
-        <h3>Recent Expenses</h3>
-        <a href="#">View All →</a>
-      </div>
-      <div class="no_expenses">
-        <div class="no_expenses_icon">🧾</div>
-        <p class="no_expenses_title">No expenses yet</p>
-        <p class="no_expenses_sub">Add your first expense above</p>
-      </div>
-    </div>
-
-  </main>
-  </div>
-
+    <!-- <script src="https://unpkg.com/lucide@latest"></script>
   <script>
+    lucide.createIcons();
+
     document.getElementById('date').textContent = new Date().toLocaleDateString('en-GB', {
       weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
-
-    function setPeriod(period, btn) {
-      document.querySelectorAll('.toggle_btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    }
 
     function toggleExpense() {
       const form = document.getElementById('quick_add_form');
@@ -198,6 +479,11 @@
       form.style.display = isOpen ? 'none' : 'block';
       chevron.innerHTML = isOpen ? '&#8964;' : '&#8963;';
     }
-  </script>
-</body>
+
+    function setPeriod(period, btn) {
+      document.querySelectorAll('.toggle_btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script> -->
+  </body>
 </html>

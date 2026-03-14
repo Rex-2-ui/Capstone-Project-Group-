@@ -623,6 +623,309 @@ main {
     color: #9ca3af;
 }
 
+
+/* EXPENSES */
+/* PAGE HEADER */
+.page_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page_title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #111827;
+}
+
+.page_sub {
+    font-size: 14px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+
+.add_btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add_btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* SEARCH */
+.search_wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.search_wrap input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    width: 100%;
+    color: #111827;
+}
+
+.search_wrap svg {
+    width: 18px;
+    height: 18px;
+    color: #9ca3af;
+    flex-shrink: 0;
+}
+
+/* FILTER BUTTONS */
+.filter_row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.filter_btn {
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.filter_btn.active {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+    font-weight: bold;
+}
+
+/* SORT ROW */
+.sort_row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.sort_row svg {
+    width: 16px;
+    height: 16px;
+}
+
+.sort_btn {
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid #e5e7eb;
+    background: white;
+    font-size: 13px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.sort_btn.active {
+    border-color: #2563eb;
+    color: #2563eb;
+    font-weight: 600;
+}
+/* ANALYTICS */
+.no_expenses_icon svg {
+    width: 36px;
+    height: 36px;
+    color: #2563eb;
+}
+
+/* TIPS HERO */
+.tips_hero {
+    background: linear-gradient(135deg, #0f2040, #1a3a6e);
+    border-radius: 16px;
+    padding: 36px;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tips_hero_icon {
+    background-color: rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.tips_hero_icon svg {
+    width: 26px;
+    height: 26px;
+    color: #f59e0b;
+}
+
+.tips_hero h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tips_hero p {
+    font-size: 14px;
+    color: #bfdbfe;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+/* QUICK TIPS ROW */
+.quick_tips_row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.quick_tip_card {
+    background-color: white;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1px solid #e5e7eb;
+}
+
+.quick_tip_card svg {
+    width: 22px;
+    height: 22px;
+    color: #2563eb;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.quick_tip_card p {
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.5;
+}
+
+/* TIPS GRID */
+.tips_grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.tip_card {
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid #e5e7eb;
+}
+
+.tip_card_header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.tip_icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tip_icon svg {
+    width: 22px;
+    height: 22px;
+    color: #1a3a6e;
+}
+
+.tips_label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #f59e0b;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.tip_card_header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.tip_list {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    counter-reset: tip-counter;
+}
+
+.tip_list li {
+    display: flex;
+    gap: 12px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.5;
+    counter-increment: tip-counter;
+}
+
+.tip_list li::before {
+    content: counter(tip-counter);
+    background-color: white;
+    color: #2563eb;
+    font-weight: 700;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* TIPS FOOTER */
+.tips_footer {
+    text-align: center;
+    padding: 20px;
+    color: #9ca3af;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .quick_tips_row {
+        grid-template-columns: 1fr;
+    }
+
+    .tips_grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* MOBILE */
 @media (max-width: 768px) {
     .content_grid {
